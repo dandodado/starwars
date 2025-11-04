@@ -1,3 +1,3 @@
 # starwars
 
-## May the <span style="color: red">Force</span> be with you
+## May the <span style="#ec0d0d">Force</span> be with you
