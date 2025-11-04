@@ -3,15 +3,26 @@ class Particle {
     this.pos = createVector(width/2, height/3);
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
+    this.mouse = createVector(mouseX, mouseY);
+    this.mo = createVector(0,0);
 
     this.c = color(0);
     this.w = 50;
   }
 
-  addForce(aForce, bForce) {
+  addForce(aForce) {
     this.acc.add(aForce);
+    
+    }
+    
+  
+  slowdown(bForce) {
+if(this.acc>this.mo){
     this.acc.add(bForce);
+  }else{
+    thhis.acc.set(0,0)
   }
+}
 
   update() {
     this.vel.add(this.acc);
@@ -30,6 +41,9 @@ class Particle {
     
     if (this.pos.x > width) {
       this.pos.x = 0;
+    }
+     if (this.pos.x < 0) {
+      this.pos.x = width;
     }
   }
 
